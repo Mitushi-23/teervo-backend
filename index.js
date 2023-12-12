@@ -27,12 +27,14 @@ app.post("/getWeather", async (req, res) => {
       temperature: `${data.main.temp}°C`,
       humidity: `${data.main.humidity}%`,
       weatherDescription: data.weather[0].description,
+      icon: forecast.weather[0].icon
     };
   } catch (error) {
     weatherData[cities] = {
       temperature: "Not available",
       humidity: "Not available",
       weatherDescription: "Not available",
+      icon: "Not available",
     };
   }
 
@@ -60,6 +62,7 @@ app.post("/getFiveDayForecast", async (req, res) => {
         time: forecast.dt_txt.split(' ')[1],
         temperature: forecast.main.temp,
         weather: forecast.weather[0].description,
+        icon: forecast.weather[0].icon
       });
     }
   } catch (error) {
