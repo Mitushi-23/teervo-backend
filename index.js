@@ -27,7 +27,7 @@ app.post("/getWeather", async (req, res) => {
       temperature: `${data.main.temp}°C`,
       humidity: `${data.main.humidity}%`,
       weatherDescription: data.weather[0].description,
-      icon: forecast.weather[0].icon
+      icon: data.weather[0].icon
     };
   } catch (error) {
     weatherData[cities] = {
