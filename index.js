@@ -60,7 +60,7 @@ app.post("/getFiveDayForecast", async (req, res) => {
 
       forecastData[date].push({
         time: forecast.dt_txt.split(' ')[1],
-        temperature: forecast.main.temp,
+        temperature: `${forecast.main.temp}°C`,
         weather: forecast.weather[0].description,
         icon: forecast.weather[0].icon
       });
